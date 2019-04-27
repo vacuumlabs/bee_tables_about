@@ -1,50 +1,49 @@
 # Bee Tables
 
-The mission of Bee Tables is to create a robust, configurable and safe place for your data.
+The mission of Bee Tables is to create a configurable and robust place for your business data.
 
 Bee Tables is not another CRM or an accounting system. Bee Tables is mission-agnostic tool
-resembling Excel or Google Sheets. The core features include proper scripting language support
+resembling Excel or Google Sheets. The core features include powerful scripting language support
 (Javascript), audibility of all changes, configurable approval process, and granular access rights.
 
 This comes at a cost: We've sacrificed some [WYSIWYG](https://en.wikipedia.org/wiki/WYSIWYG)
-features of Excel which means that only engineer with at least basic knowledge of programming is able to
-setup the project, create tables, calculate views, use external data sources, setup access-rights
-logic. Once the project structure is ready, users can manipulate data just like with Excell, but
+features of Excel. This means that only engineer with at least basic knowledge of programming is able to
+set up the project, create tables, calculate views, use external data sources and setup access-rights
+logic. Once the project structure is ready, users can manipulate data just like with Excel, but
 without constant fear, they'll break something.
 
 ## Sample use-case for Bee Tables
 
 The company wants to create an internal accounting system for managing their suppliers. While many
-solutions exists for such a task, let us present, what you can do with Bee Tables. Product owners
+solutions exist for such a task, let us show, what you can achieve with Bee Tables. Product owners
 have the following requirements on the system:
 
-- Finance department can create and edit ledger entries for individual suppliers. Finance department
+- The finance department can create and edit ledger entries for individual suppliers. Finance department
   cannot edit ledger entries older than 1 month without approval of the management.
 - If turnover on a ledger of a certain supplier ledger exceeds $10k per month, the management is
   notified via e-mail.
 - Office department cannot see the majority of the suppliers' data, but they can see (not edit)
   suppliers that are labeled as 'office'.
 - Simple machine learning model is used to predict, how much the company is going to spend to the individual
-  suppliers. Discover trends (in Winter we usually pay more money to X) should be part of the ML
-  model.
+  suppliers. The ML is here to discover trends (in Winter we usually pay more money to X).
 - Individual suppliers can log in to the system and see their individual ledgers.
 - Calendar view shows due-dates for delivering goods and paying invoices.
 - The system can use the current conversion rate to convert between various currencies.
 
-While mutliple table processors can do some parts of such feature set, no-one can do everything (not
-even close to it!). Quite contrary, one week of engineering work is just enough to configure such
-system within Bee Tables!
+While multiple table processors can do some parts of such feature set, no-one can do everything (not
+even close to it!). With Bee Tables, one week of engineering work is enough to configure such a
+system!
 
 ## Feature set
 
 ### Authentication
 
-Users can sign in via Google, Facebook, Github, LinkedIn or Username + password.
+Users can sign in via Google, Facebook, Github, LinkedIn or use username + password.
 
 ### History
 
 Unlike Google Sheets, new changes are grouped to _patches_. You can review what changes were made
-together on one patch, or you can easily see who input the given value, when and what changes were
+with individual patches, or you can easily see who changed the given value, when and what other changes were
 part of this patch. You can recover the document to any given point in history.
 
 ### Approval process for new changes
@@ -56,8 +55,8 @@ programmers to use such workflows. We believe that adopting similar practices fo
 necessary to maintain high quality of your dataset.
 
 Before the user produces a patch of changes, they are prompted to review what exactly they have changed. This
-is a perfect way to filter out some mistakes such as accidentally changed field or change that
-wasn't finished. Once the patch is reviewed by its author, it may be subjected to further review.
+is a perfect way to filter out some mistakes such as accidentally changed field or half-finished-change.
+Once the patch is reviewed by its author, it may be subjected to further review.
 
 The review process is configurable, so you can define your own business rules for how many approvals
 and from what roles are needed for a patch to be applied to the dataset. For example, changing the user's
@@ -67,26 +66,26 @@ management.
 ### Custom views
 
 By default, data is displayed in the form of the table. The system can, however, support custom views
-(requires coding). Data you have can be visualized as the chart, calendar, kanban board or plan of the building.
+(requires coding). Data you have can be visualized as the chart, calendar, Kanban board or plan of the building.
 
 The views are implemented using HTML + CSS. There is a good reason for this: In Excel, all you can do
 to achieve a nice look of your table is to customize colors, borders, fonts and (if you're pro)
 marge cells. This is a nice start, but this is no way how to create top-tier visualizations. On the
 other hand, HTML + CSS is used by millions of projects to achieve exactly this.
 
-### Powerfull scripting language
+### Powerful scripting language
 
 The scripting language is Javascript. This means, that the vast majority of system configuration needs
 to be done by engineers (either internal resource, or can be supplied by Vacuumlabs). Using
-javascript as scripting language gives engineers a lot of power: They can do complex calculations at
+Javascript as scripting language gives engineers a lot of power: They can do complex calculations at
 ease, use tons of existing chart libraries, create beautiful visuals, and even train Machine
 Learning models on top of your data!
 
 ### Granular access rights
 
-Turing-complete system for defining access right allows you to define insainly complex access
-schemes. Usually you won't use the majority of this power, still, it's good to have it in case it
-might be useful.
+As with Sheets, you can grant read/write permissions to individual datasets. The permission model, however, is much more granular than just this. You can allow a user to see some selection of the data,
+or allow them to do only certain changes. For example, you can let you HR approve small expenses. If
+they mistakenly try to approve higher value, the permission system kicks in!
 
 ### Legislation loves custom hosting
 
